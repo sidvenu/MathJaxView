@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/MathJaxView.iml" filepath="$PROJECT_DIR$/MathJaxView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mathjaxview/mathjaxview.iml" filepath="$PROJECT_DIR$/mathjaxview/mathjaxview.iml" />
+    </modules>
+  </component>
+</project>
