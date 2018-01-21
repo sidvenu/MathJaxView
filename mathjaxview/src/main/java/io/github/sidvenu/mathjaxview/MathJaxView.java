@@ -33,7 +33,7 @@ public class MathJaxView extends WebView {
                 "      processEscapes: true\n" +
                 "    },\n" +
                 "    TeX: {\n" +
-                "      extensions: [\"file:///android_asset/MathJax/mhchem.js\"]\n" +
+                "      extensions: [\"file:///android_asset/MathJax/extensions/TeX/mhchem.js\"]\n" +
                 "    }\n" +
                 "});";
 
