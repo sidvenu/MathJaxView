@@ -31,7 +31,7 @@ ext {
     // Where you will see your artifact in Bintray's web interface
     // The "bintrayName" should match the name of the Bintray repro.
     bintrayRepo = 'maven'
-    bintrayName = 'mathjaxview'
+    bintrayName = 'MathJaxView'
 
     // Maven metadata
     publishedGroupId = 'io.github.sidvenu.mathjaxview'
