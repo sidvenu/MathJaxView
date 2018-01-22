@@ -5,6 +5,8 @@
 MathJaxView is a custom view extending WebView and offers offline support for MathJax that renders faster than
 [MathView] with its support for fast-preview.
 
+<img src="https://github.com/sidvenu/MathJaxView/blob/master/screenshots/screenshot.gif">
+
 ## Setup
 You can add MathJaxView to your Android Studio project in two ways:
 1. Using a remote Maven repository (jCenter)
