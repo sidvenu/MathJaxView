@@ -80,4 +80,11 @@ Please view the [code](https://github.com/sidvenu/MathJaxView/blob/master/mathja
 and try to understand it yourself. If you don't, please raise a issue with the **help wanted** label.
 
 ## Issues
-Please [report](https://github.com/sidvenu/MathJaxView/issues) any issues that you encountered, not limited to performance improvements and updating the MathJax assets
+Please [report](https://github.com/sidvenu/MathJaxView/issues) any issues that you encountered, not limited to performance improvements and
+updating the MathJax assets.
+
+## Pull Requests
+PRs are an all-time welcome provided you follow the coding style similar to that already existing in the project
+
+## License
+This software is licensed under the Apache License, Version 2.0. Refer [LICENSE](https://github.com/sidvenu/MathJaxView/LICENSE.md) for more details.
