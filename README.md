@@ -1,5 +1,6 @@
 # MathJaxView
 [![API](https://img.shields.io/badge/API-15%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=15)
+[![Download](https://api.bintray.com/packages/sidvenu/maven/MathJaxView/images/download.svg)](https://bintray.com/sidvenu/maven/MathJaxView/_latestVersion)
 
 MathJaxView is a custom view extending WebView and offers offline support for MathJax that renders faster than
 [MathView](https://github.com/kexanie/MathView) with its support for fast-preview.
