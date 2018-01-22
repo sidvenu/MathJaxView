@@ -87,5 +87,9 @@ updating the MathJax assets.
 ## Pull Requests
 PRs are an all-time welcome provided you follow the coding style similar to that already existing in the project
 
+## Thanks
+A sincere thanks to [kexanie](https://github.com/kexanie) for their [MathView](https://github.com/kexanie/MathView) project
+that served as an inspiration for this project.
+
 ## License
 This software is licensed under the Apache License, Version 2.0. Refer [LICENSE](https://github.com/sidvenu/MathJaxView/LICENSE.md) for more details.
