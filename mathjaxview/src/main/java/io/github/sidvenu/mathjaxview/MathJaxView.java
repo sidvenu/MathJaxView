@@ -20,7 +20,7 @@ public class MathJaxView extends WebView {
 
         // default config for MathJax
         config = "MathJax.Hub.Config({\n" +
-                "    messageStyle: 'simple',\n" +
+                "    messageStyle: 'none',\n" +
                 "    \"fast-preview\": {\n" +
                 "      Chunks: {EqnChunk: 10000, EqnChunkFactor: 1, EqnChunkDelay: 0},\n" +
                 "      color: \"inherit!important\",\n" +
