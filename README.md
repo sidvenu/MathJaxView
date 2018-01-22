@@ -14,9 +14,9 @@ Add `implementation 'io.github.sidvenu.mathjaxview:mathjaxview:1.0.3'` into **de
 
 ```groovy
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:23.0.0'
-    compile 'io.github.kexanie.library:MathView:0.0.6'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:23.0.0'
+    implementation 'io.github.kexanie.library:MathView:0.0.6'
 }
 ```
 
