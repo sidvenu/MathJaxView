@@ -3,7 +3,7 @@
 [![Download](https://api.bintray.com/packages/sidvenu/maven/MathJaxView/images/download.svg)](https://bintray.com/sidvenu/maven/MathJaxView/_latestVersion)
 
 MathJaxView is a custom view extending WebView and offers offline support for MathJax that renders faster than
-[MathView](https://github.com/kexanie/MathView) with its support for fast-preview.
+[MathView] with its support for fast-preview.
 
 ## Setup
 You can add MathJaxView to your Android Studio project in two ways:
@@ -23,7 +23,7 @@ dependencies {
 
 ### 2. Setup from local .aar file
 
-You can download the latest version of MathView from [Bintray](https://bintray.com/sidvenu/maven/MathJaxView/_latestVersion "Bintray").
+You can download the latest version of MathView from [Bintray].
 
 1) Import the module from local .aar file
 
@@ -77,19 +77,26 @@ choice.
 
 ## Documentation
 The code of MathJaxView (a single small file) is well documented and anyone can easily understand it.
-Please view the [code](https://github.com/sidvenu/MathJaxView/blob/master/mathjaxview/src/main/java/io/github/sidvenu/mathjaxview/MathJaxView.java)
+Please view the [code]
 and try to understand it yourself. If you don't, please raise a issue with the **help wanted** label.
 
 ## Issues
-Please [report](https://github.com/sidvenu/MathJaxView/issues) any issues that you encountered, not limited to performance improvements and
+Please [report] any issues that you encountered, not limited to performance improvements and
 updating the MathJax assets.
 
 ## Pull Requests
-PRs are an all-time welcome provided you follow the coding style similar to that already existing in the project
+PRs are an all-time welcome provided you follow the coding style similar to that already existing in the project.
 
 ## Thanks
-A sincere thanks to [kexanie](https://github.com/kexanie) for their [MathView](https://github.com/kexanie/MathView) project
+A sincere thanks to [kexanie] for their [MathView] project
 that served as an inspiration for this project.
 
 ## License
-This software is licensed under the Apache License, Version 2.0. Refer [LICENSE](https://github.com/sidvenu/MathJaxView/LICENSE.md) for more details.
+This software is licensed under the Apache License, Version 2.0. Refer the [license] for more details.
+
+[MathView]: https://github.com/kexanie/MathView
+[Bintray]: https://bintray.com/sidvenu/maven/MathJaxView/_latestVersion
+[code]: https://github.com/sidvenu/MathJaxView/blob/master/mathjaxview/src/main/java/io/github/sidvenu/mathjaxview/MathJaxView.java
+[report]: https://github.com/sidvenu/MathJaxView/issues
+[kexanie]: https://github.com/kexanie
+[license]: https://github.com/sidvenu/MathJaxView/blob/master/LICENSE.md
