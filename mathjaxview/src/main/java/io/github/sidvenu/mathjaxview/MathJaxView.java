@@ -1,9 +1,12 @@
 package io.github.sidvenu.mathjaxview;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.support.annotation.Nullable;
+import android.text.TextUtils;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -14,6 +17,16 @@ public class MathJaxView extends WebView {
 
     public MathJaxView(Context context, AttributeSet attrs) {
         super(context, attrs);
+
+        // if text is set in XML, call setText() with that text
+        TypedArray a = getContext().obtainStyledAttributes(
+                attrs,
+                R.styleable.MathJaxView);
+        String text = a.getString(R.styleable.MathJaxView_android_text);
+        if (!TextUtils.isEmpty(text))
+            setText(text);
+        a.recycle();
+
         getSettings().setJavaScriptEnabled(true);
         getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
         setBackgroundColor(Color.TRANSPARENT);
@@ -26,6 +39,9 @@ public class MathJaxView extends WebView {
                 "      color: \"inherit!important\",\n" +
                 "      updateTime: 30, updateDelay: 6,\n" +
                 "      disabled: false\n" +
+                "    },\n" +
+                "    \"HTML-CSS\": {\n" +
+                "      linebreaks: { automatic: true, width: \"container\" }\n" +
                 "    },\n" +
                 "    tex2jax: {\n" +
                 "      inlineMath: [ ['$','$'] ],\n" +
@@ -45,10 +61,17 @@ public class MathJaxView extends WebView {
         });
     }
 
+    // disable touch event on MathJaxView
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        return false;
+    }
+
     /**
      * I have included a default config that will be convenient for most of the people.
      * If you need to edit that config , please use this method to set your own MathJax config,
      * and note to call this before calling setText(String)
+     *
      * @param config MathJax configuration to be used
      */
     public void setConfig(String config) {
@@ -57,13 +80,18 @@ public class MathJaxView extends WebView {
 
     /**
      * Renders MathJax code that is found in the passed-in string
+     *
      * @param text Text that contains the MathJax to be rendered
      */
     public void setText(String text) {
         this.text = text;
         loadDataWithBaseURL("about:blank",
                 "<html><head>" +
-                        " <meta name=\"viewport\" content=\"width=device-width, user-scalable=yes\" />" +
+                        "<style>" +
+                        "body {" +
+                        "    text-align: center;" +
+                        "}" +
+                        "</style>" +
                         "</head>" +
                         "" +
                         "<body>" +
@@ -80,10 +108,11 @@ public class MathJaxView extends WebView {
 
     /**
      * Returns the MathJax code that was passed into using setText
+     *
      * @return raw MathJax code
      */
     @Nullable
-    public String getText(){
+    public String getText() {
         return text;
     }
 }
