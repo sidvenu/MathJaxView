@@ -44,9 +44,8 @@ The usage of MathJaxView is similar to that of TextView
     android:id="@+id/formula"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:text="$$2^x=15$$"/>
+    android:text="$$2^x=15$$"/>
 ```
-Note: `app:text` feature is not present in the current version, but will be added soon
 
 ##### Java
 ```java
