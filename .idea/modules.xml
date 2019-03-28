@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MathJaxView.iml" filepath="$PROJECT_DIR$/MathJaxView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mathjaxtest/mathjaxtest.iml" filepath="$PROJECT_DIR$/mathjaxtest/mathjaxtest.iml" />
       <module fileurl="file://$PROJECT_DIR$/mathjaxview/mathjaxview.iml" filepath="$PROJECT_DIR$/mathjaxview/mathjaxview.iml" />
     </modules>
   </component>

@@ -1,1 +1,1 @@
-include ':mathjaxview'
+include ':mathjaxview', ':mathjaxtest'

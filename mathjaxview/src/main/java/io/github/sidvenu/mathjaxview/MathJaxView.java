@@ -13,7 +13,7 @@ import android.webkit.WebViewClient;
 
 public class MathJaxView extends WebView {
 
-    String text, config;
+    String text, config, preDefinedConfig;
 
     public MathJaxView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -23,35 +23,36 @@ public class MathJaxView extends WebView {
                 attrs,
                 R.styleable.MathJaxView);
         String text = a.getString(R.styleable.MathJaxView_android_text);
+
+        // default config for MathJax
+        config = "MathJax.Hub.Config({" +
+                "    extensions: ['fast-preview.js']," +
+                "    messageStyle: 'none'," +
+                "    \"fast-preview\": {" +
+                "      disabled: false" +
+                "    }," +
+                "    CommonHTML: {" +
+                "      linebreaks: { automatic: true, width: \"container\" }" +
+                "    }," +
+                "    tex2jax: {" +
+                "      inlineMath: [ ['$','$'] ]," +
+                "      displayMath: [ ['$$','$$'] ]," +
+                "      processEscapes: true" +
+                "    }," +
+                "    TeX: {" +
+                "      extensions: [\"file:///android_asset/MathJax/extensions/TeX/mhchem.js\"]," +
+                "      mhchem: {legacy: false}"+
+                "    }" +
+                "});";
+        preDefinedConfig = "TeX-MML-AM_CHTML";
+
         if (!TextUtils.isEmpty(text))
             setText(text);
         a.recycle();
 
         getSettings().setJavaScriptEnabled(true);
-        getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
+        getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);
         setBackgroundColor(Color.TRANSPARENT);
-
-        // default config for MathJax
-        config = "MathJax.Hub.Config({\n" +
-                "    messageStyle: 'none',\n" +
-                "    \"fast-preview\": {\n" +
-                "      Chunks: {EqnChunk: 10000, EqnChunkFactor: 1, EqnChunkDelay: 0},\n" +
-                "      color: \"inherit!important\",\n" +
-                "      updateTime: 30, updateDelay: 6,\n" +
-                "      disabled: false\n" +
-                "    },\n" +
-                "    \"HTML-CSS\": {\n" +
-                "      linebreaks: { automatic: true, width: \"container\" }\n" +
-                "    },\n" +
-                "    tex2jax: {\n" +
-                "      inlineMath: [ ['$','$'] ],\n" +
-                "      displayMath: [ ['$$','$$'] ],\n" +
-                "      processEscapes: true\n" +
-                "    },\n" +
-                "    TeX: {\n" +
-                "      extensions: [\"file:///android_asset/MathJax/extensions/TeX/mhchem.js\"]\n" +
-                "    }\n" +
-                "});";
 
         // render MathJax once page finishes loading
         setWebViewClient(new WebViewClient() {
@@ -69,13 +70,35 @@ public class MathJaxView extends WebView {
 
     /**
      * I have included a default config that will be convenient for most of the people.
-     * If you need to edit that config , please use this method to set your own MathJax config,
+     * If you need to edit that config , please use this method to set your own MathJax custom config,
      * and note to call this before calling setText(String)
      *
      * @param config MathJax configuration to be used
      */
     public void setConfig(String config) {
         this.config = config;
+    }
+
+    /**
+     * This is to include any predefined MathJax configurations in the project, as referenced by
+     * http://docs.mathjax.org/en/latest/config-files.html#common-configurations.
+     * Only TeX-MML-AM_CHTML and MMLorHTML configurations comes with the assets of this project.
+     * If you want other assets, create a MathJax folder in your application's assets, and
+     * paste the config file in assets/MathJax/config/ folder.
+     *
+     * @param predefinedConfig MathJax predefined configuration to be used
+     */
+    public void setPredefinedConfig(String predefinedConfig) {
+        this.preDefinedConfig = predefinedConfig;
+    }
+
+    /**
+     * Minifies the MathJax config
+     *
+     * @param config The config to be minified
+     */
+    private String minifyConfig(String config) {
+        return config.replace("\n", "").replace(" ", "");
     }
 
     /**
@@ -92,16 +115,13 @@ public class MathJaxView extends WebView {
                         "    text-align: center;" +
                         "}" +
                         "</style>" +
+                        "<script type=\"text/x-mathjax-config\">" +
+                        minifyConfig(config) +
+                        "</script>" +
+                        "<script type=\"text/javascript\" async src=\"file:///android_asset/MathJax/MathJax.js?config=" + preDefinedConfig + "\"></script>" +
                         "</head>" +
-                        "" +
                         "<body>" +
                         text +
-                        "</br> " +
-                        "<script type=\"text/x-mathjax-config\">" +
-                        config +
-                        "</script>" +
-                        "<script type=\"text/javascript\" async src=\"file:///android_asset/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML\"></script>" +
-                        "" +
                         "</body>" +
                         "</html>", "text/html", "utf-8", "");
     }
