@@ -76,6 +76,7 @@ that served as an inspiration for this project.
 The code of MathJaxView (a single small file) is well documented and anyone can easily understand it.
 Please view the [code]
 and try to understand it yourself. If you don't, please raise a issue with the **help wanted** label.
+Furthermore, I've created a module that tests out the features of this library, called [mathjaxtest]. You can check it out for the library usage.
 
 ## Issues
 Please [report] any issues that you encountered, not limited to performance improvements and
@@ -94,3 +95,4 @@ This software is licensed under the Apache License, Version 2.0. Refer the [lice
 [report]: https://github.com/sidvenu/MathJaxView/issues
 [jianzhongli]: https://github.com/jianzhongli
 [license]: https://github.com/sidvenu/MathJaxView/blob/master/LICENSE.md*
+[mathjaxtest]: https://github.com/sidvenu/MathJaxView/tree/master/mathjaxtest/src/main
