@@ -26,7 +26,8 @@ public class MathJaxView extends WebView {
         String text = a.getString(R.styleable.MathJaxView_android_text);
 
         // default config for MathJax
-        config = "MathJax.Hub.Config({" +
+        setConfig(
+                "MathJax.Hub.Config({" +
                 "    extensions: ['fast-preview.js']," +
                 "    messageStyle: 'none'," +
                 "    \"fast-preview\": {" +
@@ -44,7 +45,8 @@ public class MathJaxView extends WebView {
                 "      extensions: [\"file:///android_asset/MathJax/extensions/TeX/mhchem.js\"]," +
                 "      mhchem: {legacy: false}"+
                 "    }" +
-                "});";
+                "});"
+        );
         preDefinedConfig = "TeX-MML-AM_CHTML";
 
         if (!TextUtils.isEmpty(text))
@@ -77,7 +79,7 @@ public class MathJaxView extends WebView {
      * @param config MathJax configuration to be used
      */
     public void setConfig(String config) {
-        this.config = config;
+        this.config = minifyConfig(config);
     }
 
     /**
@@ -117,7 +119,7 @@ public class MathJaxView extends WebView {
                         "}" +
                         "</style>" +
                         "<script type=\"text/x-mathjax-config\">" +
-                        minifyConfig(config) +
+                        config +
                         "</script>" +
                         "<script type=\"text/javascript\" async src=\"file:///android_asset/MathJax/MathJax.js?config=" + preDefinedConfig + "\"></script>" +
                         "</head>" +
