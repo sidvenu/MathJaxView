@@ -12,7 +12,7 @@ You can add MathJaxView to your Android Studio project in two ways:
 1. Using AAR file downloaded from bintray
 ### 1. Setup from a remote Maven repository (jcenter)
 
-Add `implementation 'io.github.sidvenu.mathjaxview:mathjaxview:1.0.6'` into **dependencies** section of your **module** build.gradle file.
+Add `implementation 'io.github.sidvenu.mathjaxview:mathjaxview:1.0.7'` into **dependencies** section of your **module** build.gradle file.
 
 ### 2. Setup from local .aar file
 
