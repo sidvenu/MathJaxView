@@ -115,7 +115,7 @@ public class MathJaxView extends WebView {
                 "<html><head>" +
                         "<style>" +
                         "body {" +
-                        "    text-align: center;" +
+                        "    text-align: left;" +
                         "}" +
                         "</style>" +
                         "<script type=\"text/x-mathjax-config\">" +
